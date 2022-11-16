@@ -214,7 +214,7 @@ delay(1);
         printf("\n\nSuccessfully Written\n");
 }
 
-void append(){
+void append(){                    //start editing the file without erasing the previous content
 delay(2);
     char a[100];
 
@@ -277,7 +277,7 @@ void startscreen()
     printf("Type \"help\" for more things!\n\n");
 }
 
-void removes(){
+void removes(){              //removes a file
     delay(2);
     char a[100];
     int m;
@@ -295,7 +295,7 @@ void removes(){
 
 }
 
-void renames(){
+void renames(){                           //renames a file
 delay(2);
     char a[100], b[100];
     int m;
