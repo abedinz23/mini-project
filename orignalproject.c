@@ -108,7 +108,7 @@ int main()
 
     return 0;
 }
-void delay(int a){
+void delay(int a){                       //this function is just for some time delay
     int add;
     int time=a*10000000;
     int i;
@@ -118,8 +118,8 @@ void delay(int a){
         add++;
     }
 }
-int password(){
-    char pass[30];
+int password(){                              //password protection , have a default password
+    char pass[30];                                
     char def[30]="zainul";
     printf("enter the password: ");
     scanf("%s",&pass);
@@ -133,7 +133,7 @@ int password(){
         return 0;
     }
 }
-void read(){
+void read(){                                  //read a file
 delay(2);
     char a[100];
 
@@ -174,7 +174,7 @@ delay(2);
 
 }
 
-void write(){
+void write(){                        //write a file
 delay(1);
     char a[100];
 
@@ -316,18 +316,7 @@ delay(2);
 
 }
 
-void edit(){
-    delay(2);
-    char a[100];
-    printf("Warning: Close the editor to use zainul Terminal\n");
-    printf("Use .txt or any other extension to edit\nEx: hello.txt\n\n");
-    printf("Enter file name to edit: ");
-    scanf("%s", a);
 
-    system(a);
-
-    printf("Successfully opened editing software\n");
-}
 
 void cdir(){
     delay(1);
@@ -373,7 +362,7 @@ delay(2);
 
 
 
-void help(){
+void help(){                            //prints the operation you can perform on
     delay(2);
     printf("\n");
     printf("You can enter the following commands:\n\n");
@@ -394,41 +383,41 @@ void help(){
     
 }
 
-void exits(){
+void exits(){                      //exits from the program
     exit(1);
 }
-void calculator(){
-    delay(1);
-    float a,c,d;
-    char b;
+void calculator(){                             //perform basic calculations
+    delay(1);                               
+    float num1,num2,result;
+    char ch;
 printf("enter first no: ");
-scanf("%f",&a);
+scanf("%f",&num1);
 fflush(stdin);
 printf("enter the operation you want to perform (+,-,/,*): ");
-scanf("%c",&b);
+scanf("%c",&ch);
 fflush(stdin);
 printf("enter the second no: ");
-scanf("%f",&c);
+scanf("%f",&num2);
 
 
  
- switch (b)
+ switch (ch)
  {
    case '+':
-    d=a+c;
-   printf("%f",d);
+    result=a+c;
+   printf("%f",result);
     break;
   case '-':
-   d=a-c;
-   printf("%f",d);
+   result=a-c;
+   printf("%f",result);
     break;
    case '/':
-  d=a+c;
-  printf("%f",d);
+  result=a+c;
+  printf("%f",result);
     break;
 case '*':
-d=a*c;
-printf("%f",d);
+result=a*c;
+printf("%f",result);
     break;
 
 default:
