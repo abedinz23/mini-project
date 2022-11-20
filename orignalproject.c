@@ -26,6 +26,7 @@ void calculator();
 
 int main()
 {
+    int count=1;
 
     char a[100];
 
@@ -36,6 +37,8 @@ int main()
     int z=password();
     if(z==1){
     printf("Type \"help\" for more things!\n\n");
+    
+    
 
     while(1){
 
@@ -102,6 +105,7 @@ int main()
     }}
 
     }
+
     
 
     return 0;
@@ -116,7 +120,8 @@ void delay(int a){                       //this function is just for some time d
         add++;
     }
 }
-int password(){                              //password protection , have a default password
+int password(){              
+    int static count=1;                //password protection , have a default password
     char pass[30];                                
     char def[30]="zainul";
     printf("enter the password: ");
@@ -127,8 +132,13 @@ int password(){                              //password protection , have a defa
     }
     else
     {
-        printf("you have entered wrong password try again");
-        return 0;
+        printf("\nyou have entered wrong password %d attempt left \n",3-count);
+        if(count<3){
+        count++;
+        password();
+        
+        }
+        
     }
 }
 void read(){                                  //read a file
@@ -403,23 +413,23 @@ scanf("%f",&num2);
  {
    case '+':
     result=num1+num2;
-   printf("%f",result);
+   printf("%f\n",result);
     break;
   case '-':
    result=num1-num2;
-   printf("%f",result);
+   printf("%f\n",result);
     break;
    case '/':
   result=num1/num2;
-  printf("%f",result);
+  printf("%f\n",result);
     break;
 case '*':
 result=num1*num2;
-printf("%f",result);
+printf("%f\n",result);
     break;
 
 default:
- printf("you have entered the wrong values");
+ printf("you have entered the wrong values\n");
     break;
 }
 }
